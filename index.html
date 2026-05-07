@@ -1,83 +1,155 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAV PHOTO | Rafał Jakuć - Fotografia Motoryzacyjna</title>
+    <title>RAV PHOTO | Rafał Jakuć - Fotografia Motoryzacyjna Białystok</title>
+    <meta name="description" content="Profesjonalna fotografia motoryzacyjna - Rafał Jakuć (ravmotophoto). Sesje komercyjne i prywatne w Białymstoku i całej Polsce.">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: white; }
-        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.4), rgba(10,10,10,1)); }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0a0a0a; 
+            color: white; 
+        }
+        .hero-gradient { 
+            background: linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0.4) 50%, rgba(0,0,0,0.2) 100%); 
+        }
+        /* Custom transition for images */
+        .img-hover {
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s ease;
+        }
     </style>
 </head>
-<body>
+<body class="antialiased">
 
     <!-- Header / Menu -->
-    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-black/50 backdrop-blur-md">
-        <div class="text-2xl font-black tracking-tighter uppercase">RAV<span class="text-red-600">PHOTO</span></div>
-        <div class="space-x-8 text-sm uppercase tracking-widest hidden md:block">
-            <a href="#portfolio" class="hover:text-red-600 transition">Portfolio</a>
-            <a href="#about" class="hover:text-red-600 transition">O mnie</a>
-            <a href="#contact" class="hover:text-red-600 transition">Kontakt</a>
+    <nav class="fixed w-full z-50 px-6 py-4 md:px-12 md:py-6 flex justify-between items-center bg-black/70 backdrop-blur-md border-b border-white/5">
+        <div class="text-2xl font-black tracking-tighter uppercase">
+            RAV<span class="text-red-600">PHOTO</span>
+        </div>
+        <div class="space-x-6 md:space-x-10 text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold">
+            <a href="#portfolio" class="hover:text-red-600 transition duration-300">Portfolio</a>
+            <a href="#about" class="hover:text-red-600 transition duration-300">O mnie</a>
+            <a href="#contact" class="hover:text-red-600 transition duration-300">Kontakt</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative h-screen flex items-end pb-20 px-8 overflow-hidden">
-        <!-- Tło: Tu wstaw link do swojego najlepszego zdjęcia -->
+    <section class="relative h-screen flex items-end pb-24 px-6 md:px-12 overflow-hidden">
+        <!-- Tło główne - upewnij się, że rozszerzenie pliku jest poprawne (.jpg) -->
         <img src="5E8A1246.jpg" 
-             class="absolute inset-0 w-full h-full object-cover -z-10" alt="Samochód tło">
+             class="absolute inset-0 w-full h-full object-cover -z-20" 
+             alt="Rafał Jakuć Fotografia Motoryzacyjna">
+        
+        <!-- Gradient overlay dla czytelności -->
         <div class="absolute inset-0 hero-gradient -z-10"></div>
         
-        <div>
-            <h1 class="text-6xl md:text-8xl font-black leading-none uppercase">Rafał Jakuć</h1>
-            <p class="text-xl md:text-2xl text-gray-400 mt-4 tracking-widest uppercase">Automotive Photographer | @ravmotophoto</p>
+        <div class="max-w-5xl">
+            <span class="text-red-600 font-bold tracking-[0.4em] text-sm md:text-base block mb-2 animate-pulse">AVAILABLE NATIONWIDE</span>
+            <h1 class="text-5xl md:text-8xl lg:text-9xl font-black leading-none uppercase italic tracking-tighter">
+                Rafał Jakuć
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-400 mt-4 tracking-[0.2em] uppercase font-light">
+                Automotive Photographer | <span class="text-white">@ravmotophoto</span>
+            </p>
         </div>
     </section>
 
     <!-- Portfolio Grid -->
-    <section id="portfolio" class="py-20 px-4 md:px-8">
-        <h2 class="text-center text-3xl font-bold mb-12 uppercase tracking-tighter">Wybrane Prace</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <!-- Placeholdery zdjęć - zamień na swoje pliki -->
-            <div class="aspect-square bg-gray-900 group overflow-hidden">
-                <img src="5E8A3078-3" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700 transform group-hover:scale-105" alt="Moto 1">
-            </div>
-            <div class="aspect-square bg-gray-900 group overflow-hidden">
-                <img src="5E8A0945" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700 transform group-hover:scale-105" alt="Moto 2">
-            </div>
-            <div class="aspect-square bg-gray-900 group overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700 transform group-hover:scale-105" alt="Moto 3">
-            </div>
+    <section id="portfolio" class="py-24 px-4 md:px-8 bg-[#0a0a0a]">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 px-4">
+            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter">Wybrane<br><span class="text-red-600">Realizacje</span></h2>
+            <p class="text-gray-500 text-sm max-w-xs mt-4 md:mt-0 uppercase tracking-widest">Kliknij w zdjęcie, aby zobaczyć detale projektu.</p>
         </div>
-    </section>
 
-    <!-- O mnie & Kontakt -->
-    <section id="about" class="py-20 px-8 bg-zinc-950">
-        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-16">
-            <div>
-                <h2 class="text-4xl font-bold mb-6">O MNIE</h2>
-                <p class="text-gray-400 leading-relaxed">
-                    Nazywam się Rafał Jakuć. W świecie znanym jako <strong>ravmotophoto</strong>, łączę pasję do motoryzacji z profesjonalną fotografią. Każdy samochód ma swoją historię i linię, którą staram się wydobyć poprzez odpowiednie światło i kadr. Pracuję zarówno przy sesjach komercyjnych, jak i prywatnych zleceniach dla pasjonatów.
-                </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Zdjęcie 1 -->
+            <div class="aspect-[4/5] bg-zinc-900 overflow-hidden relative group cursor-pointer">
+                <img src="5E8A3078-3.jpg" 
+                     loading="lazy"
+                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 img-hover group-hover:scale-110" 
+                     alt="Sesja motoryzacyjna 1">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                    <span class="border border-white px-4 py-2 text-xs uppercase tracking-widest">Zobacz projekt</span>
+                </div>
             </div>
-            <div id="contact">
-                <h2 class="text-4xl font-bold mb-6">KONTAKT</h2>
-                <ul class="space-y-4 text-gray-300">
-                    <li class="flex items-center"><span class="w-24 font-bold text-red-600 uppercase text-xs">Email:</span> ravmotophoto@gmail.com</li>
-                    <li class="flex items-center"><span class="w-24 font-bold text-red-600 uppercase text-xs">Instagram:</span> @ravmotophoto</li>
-                    <li class="flex items-center"><span class="w-24 font-bold text-red-600 uppercase text-xs">Lokalizacja:</span> Białystok / Polska</li>
-                </ul>
-                <div class="mt-8">
-                    <a href="mailto:ravmotophoto@gmail.com" class="inline-block border-2 border-red-600 px-8 py-3 font-bold hover:bg-red-600 transition">ZAREZERWUJ SESJĘ</a>
+
+            <!-- Zdjęcie 2 -->
+            <div class="aspect-[4/5] bg-zinc-900 overflow-hidden relative group cursor-pointer">
+                <img src="5E8A0945.jpg" 
+                     loading="lazy"
+                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 img-hover group-hover:scale-110" 
+                     alt="Sesja motoryzacyjna 2">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                    <span class="border border-white px-4 py-2 text-xs uppercase tracking-widest">Zobacz projekt</span>
+                </div>
+            </div>
+
+            <!-- Zdjęcie 3 -->
+            <div class="aspect-[4/5] bg-zinc-900 overflow-hidden relative group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=800" 
+                     loading="lazy"
+                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 img-hover group-hover:scale-110" 
+                     alt="Sesja motoryzacyjna 3">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                    <span class="border border-white px-4 py-2 text-xs uppercase tracking-widest">Zobacz projekt</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-xs text-gray-600 border-t border-zinc-900">
-        &copy; 2026 RAV PHOTO Rafał Jakuć. Wszystkie prawa zastrzeżone.
+    <!-- O mnie & Kontakt -->
+    <section id="about" class="py-32 px-6 md:px-12 bg-zinc-950 border-t border-white/5">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20">
+            <div>
+                <h2 class="text-5xl font-black mb-8 tracking-tighter uppercase italic">O mnie</h2>
+                <p class="text-gray-400 leading-relaxed text-lg mb-6">
+                    Nazywam się <span class="text-white font-bold">Rafał Jakuć</span>. W sieci tworzę jako <span class="text-red-600 font-bold">ravmotophoto</span>. 
+                </p>
+                <p class="text-gray-400 leading-relaxed">
+                    Moja praca to coś więcej niż zdjęcia – to łapanie charakteru maszyny, jej dynamiki i detali, które czynią ją wyjątkową. Specjalizuję się w profesjonalnych sesjach dla dealerów, firm tuningowych oraz pasjonatów, którzy chcą uwiecznić swój samochód w najlepszym wydaniu.
+                </p>
+            </div>
+            
+            <div id="contact" class="flex flex-col justify-center">
+                <h2 class="text-5xl font-black mb-8 tracking-tighter uppercase italic text-red-600">Kontakt</h2>
+                <div class="space-y-6">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-1">E-mail</p>
+                        <a href="mailto:ravmotophoto@gmail.com" class="text-xl md:text-2xl hover:text-red-600 transition">ravmotophoto@gmail.com</a>
+                    </div>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-1">Social Media</p>
+                        <a href="https://instagram.com/ravmotophoto" target="_blank" class="text-xl md:text-2xl hover:text-red-600 transition">@ravmotophoto</a>
+                    </div>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-1">Lokalizacja</p>
+                        <p class="text-xl md:text-2xl text-white">Białystok / Cała Polska</p>
+                    </div>
+                </div>
+                <div class="mt-12">
+                    <a href="mailto:ravmotophoto@gmail.com" 
+                       class="inline-block bg-red-600 text-white px-10 py-4 font-black tracking-widest hover:bg-white hover:text-black transition duration-500 uppercase text-sm">
+                        Zarezerwuj termin
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 text-center bg-black border-t border-white/5">
+        <div class="text-xl font-black tracking-tighter uppercase mb-4">
+            RAV<span class="text-red-600">PHOTO</span>
+        </div>
+        <p class="text-[10px] text-gray-600 uppercase tracking-[0.2em]">
+            &copy; 2026 Rafał Jakuć. Crafted for speed and style.
+        </p>
     </footer>
 
 </body>
