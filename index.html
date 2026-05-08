@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAV PHOTO | Rafał Jakuć - Fotografia Motoryzacyjna</title>
-    <meta name="description" content="Profesjonalna fotografia motoryzacyjna - Rafał Jakuć (ravmotophoto). Sesje komercyjne i prywatne.">
+    <title>RAV PHOTO | Rafał Jakuć - Fotograf Motoryzacyjny</title>
+    <meta name="description" content="Profesjonalna fotografia motoryzacyjna - Rafał Jakuć (ravmotophoto). Sesje komercyjne, reportaże z imprez driftingowych i rajdów.">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -13,30 +13,35 @@
         body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: white; }
         .hero-gradient { background: linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0.3) 50%, rgba(0,0,0,0) 100%); }
         .img-hover { transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1); }
+        .nav-blur { background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(12px); }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Header / Menu -->
-    <nav class="fixed w-full z-50 px-6 py-4 md:px-12 md:py-6 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/5">
+    <nav class="fixed w-full z-50 px-6 py-4 md:px-12 md:py-6 flex justify-between items-center nav-blur border-b border-white/5">
         <div class="text-2xl font-black tracking-tighter uppercase">
             RAV<span class="text-red-600">PHOTO</span>
         </div>
         
         <div class="flex items-center space-x-6 md:space-x-10">
             <div class="hidden md:flex space-x-8 text-[10px] uppercase tracking-[0.3em] font-bold">
-                <a href="#portfolio" class="hover:text-red-600 transition duration-300">Portfolio</a>
                 <a href="#about" class="hover:text-red-600 transition duration-300">O mnie</a>
+                <a href="#portfolio" class="hover:text-red-600 transition duration-300">Portfolio</a>
                 <a href="#contact" class="hover:text-red-600 transition duration-300">Kontakt</a>
             </div>
             
-            <!-- Social Media Icons -->
             <div class="flex items-center space-x-4 border-l border-white/20 pl-6">
                 <a href="https://instagram.com/ravmotophoto" target="_blank" class="hover:text-red-600 transition duration-300">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                </a>
-                <a href="https://facebook.com/TWOJ-PROFIL" target="_blank" class="hover:text-red-600 transition duration-300">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
                 </a>
             </div>
         </div>
@@ -44,78 +49,93 @@
 
     <!-- Hero Section -->
     <section class="relative h-screen flex items-end pb-24 px-6 md:px-12 overflow-hidden">
-        <img src="5E8A1246.jpg" class="absolute inset-0 w-full h-full object-cover -z-20" alt="Rafał Jakuć Fotografia Motoryzacyjna">
+        <img src="Moto 1.jpg" class="absolute inset-0 w-full h-full object-cover -z-20" alt="Rafał Jakuć - Fotograf Motoryzacyjny">
         <div class="absolute inset-0 hero-gradient -z-10"></div>
-        <div class="max-w-5xl">
-            <h1 class="text-6xl md:text-8xl lg:text-9xl font-black leading-none uppercase italic tracking-tighter">
+        <div class="max-w-5xl fade-in">
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-black leading-none uppercase italic tracking-tighter text-white">
                 Rafał Jakuć
             </h1>
             <p class="text-lg md:text-2xl text-gray-400 mt-4 tracking-[0.2em] uppercase font-light">
-                Automotive Photographer | <span class="text-white">@ravmotophoto</span>
+                Fotograf Motoryzacyjny | <span class="text-white font-normal">@ravmotophoto</span>
             </p>
         </div>
     </section>
 
-    <!-- Portfolio Grid (6 zdjęć) -->
-    <section id="portfolio" class="py-24 px-4 md:px-8 bg-[#0a0a0a]">
-        <div class="mb-16 px-4 text-center md:text-left">
-            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter">
-                Wybrane<span class="text-red-600 italic ml-2">Prace</span>
-            </h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <!-- Tutaj Twoje zdjęcia. Jeśli chcesz by wyświetlały się CAŁE bez ucinania, 
-                 upewnij się, że są wykadrowane do 4:5 lub zmień aspect-[4/5] na inne ratio -->
-            <div class="aspect-[4/5] bg-zinc-900 overflow-hidden group border border-white/5">
-                <img src="5E8A3078-3.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 1">
-            </div>
-            <div class="aspect-[4/5] bg-zinc-900 overflow-hidden group border border-white/5">
-                <img src="5E8A0945.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 2">
-            </div>
-            <div class="aspect-[4/5] bg-zinc-900 overflow-hidden group border border-white/5">
-                <img src="foto3.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 3">
-            </div>
-            <div class="aspect-[4/5] bg-zinc-900 overflow-hidden group border border-white/5">
-                <img src="foto4.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 4">
-            </div>
-            <div class="aspect-[4/5] bg-zinc-900 overflow-hidden group border border-white/5">
-                <img src="foto5.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 5">
-            </div>
-            <div class="aspect-[4/5] bg-zinc-900 overflow-hidden group border border-white/5">
-                <img src="foto6.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 6">
+    <!-- O mnie -->
+    <section id="about" class="py-32 px-6 md:px-12 bg-[#0d0d0d]">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h2 class="text-4xl md:text-5xl font-black mb-12 tracking-tighter uppercase italic">O mnie</h2>
+            <div class="space-y-8 text-gray-400 leading-relaxed text-lg font-light">
+                <p>
+                    Nazywam się <span class="text-white font-bold">Rafał Jakuć</span>. Pod marką <span class="text-red-600 font-bold tracking-widest">RAVMOTOPHOTO</span> zajmuję się fotografią, która żyje zapachem spalonej gumy i dźwiękiem silników. Moje miejsce to nie sterylne studio, a tor wyścigowy, trasy rajdowe i tętniące motoryzacją wydarzenia.
+                </p>
+                <p>
+                    Jako główny fotograf i media manager współtworzę eventy <span class="text-white font-bold uppercase tracking-wider">East Side Drift</span> oraz <span class="text-white font-bold uppercase tracking-wider">Drift Girl Camp</span>. Regularnie pracuję na największych arenach driftingowych w kraju, relacjonując ligi <span class="text-white">Drift Open</span> czy <span class="text-white">DMP</span>. 
+                </p>
+                <p>
+                    Od reportaży z rajdów, przez współpracę z wypożyczalniami aut premium, aż po sesje indywidualne – moje zdjęcia mają oddawać dynamikę i bezkompromisowy charakter maszyny. Jeśli szukasz materiału, który nie tylko wygląda, ale niesie ze sobą konkretny klimat, jesteś w dobrym miejscu.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- O mnie & Kontakt -->
-    <section id="about" class="py-32 px-6 md:px-12 bg-zinc-950 border-t border-white/5">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20">
-            <div>
-                <h2 class="text-5xl font-black mb-8 tracking-tighter uppercase italic">O mnie</h2>
-                <div class="space-y-6 text-gray-400 leading-relaxed text-lg">
-                    <p>Nazywam się <span class="text-white font-bold">Rafał Jakuć</span>. W sieci tworzę jako <span class="text-red-600 font-bold">ravphoto</span>.</p>
-                    <p>Specjalizuję się w profesjonalnych sesjach na wydarzeniach motoryzacyjnych, firm tuningowych oraz pasjonatów motoryzacji. Moje zdjęcia to połączenie technicznej precyzji z artystycznym spojrzeniem.</p>
+    <!-- Portfolio Grid (21 zdjęć: Moto 2.jpg do Moto 22.jpg) -->
+    <section id="portfolio" class="py-24 px-4 md:px-8 bg-[#0a0a0a]">
+        <div class="mb-12 px-4">
+            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white">
+                Portfolio
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-[1600px] mx-auto">
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 2.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 2"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 3.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 3"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 4.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 4"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 5.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 5"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 6.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 6"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 7.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 7"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 8.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 8"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 9.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 9"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 10.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 10"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 11.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 11"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 12.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 12"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 13.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 13"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 14.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 14"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 15.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 15"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 16.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 16"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 17.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 17"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 18.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 18"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 19.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 19"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 20.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 20"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 21.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 21"></div>
+            <div class="aspect-[3/2] bg-zinc-900 overflow-hidden border border-white/5 group"><img src="Moto 22.jpg" loading="lazy" class="w-full h-full object-cover img-hover group-hover:scale-105" alt="Portfolio 22"></div>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="contact" class="py-32 px-6 md:px-12 bg-zinc-950 border-t border-white/5 text-center md:text-left">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-5xl font-black mb-12 tracking-tighter uppercase italic text-red-600">Kontakt</h2>
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="space-y-8 text-gray-400 font-light">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-2 font-bold">E-mail</p>
+                        <a href="mailto:ravmotophoto@gmail.com" class="text-xl md:text-2xl font-bold text-white hover:text-red-600 transition duration-300">ravmotophoto@gmail.com</a>
+                    </div>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-2 font-bold">Social Media</p>
+                        <a href="https://instagram.com/ravmotophoto" target="_blank" class="text-xl md:text-2xl font-bold text-white hover:text-red-600 transition">Instagram</a>
+                    </div>
                 </div>
-            </div>
-            
-            <div id="contact" class="flex flex-col justify-center">
-                <h2 class="text-5xl font-black mb-8 tracking-tighter uppercase italic text-red-600">Kontakt</h2>
                 <div class="space-y-8">
                     <div>
-                        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-2">E-mail</p>
-                        <a href="mailto:ravmotophoto@gmail.com" class="text-xl md:text-3xl font-bold hover:text-red-600 transition duration-300">ravmotophoto@gmail.com</a>
+                        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-2 font-bold">Lokalizacja</p>
+                        <p class="text-xl md:text-2xl font-bold text-white uppercase italic">Białystok / Polska</p>
                     </div>
-                    <div>
-                        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-2">Social Media</p>
-                        <div class="flex space-x-6 text-xl font-bold">
-                            <a href="https://instagram.com/ravmotophoto" target="_blank" class="hover:text-red-600 transition">Instagram</a>
-                            <a href="#" class="hover:text-red-600 transition">Facebook</a>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-2">Lokalizacja</p>
-                        <p class="text-xl md:text-3xl font-bold text-white">Białystok / Polska</p>
+                    <div class="pt-4 flex justify-center md:justify-start">
+                        <a href="mailto:ravmotophoto@gmail.com" class="inline-block border-2 border-red-600 px-12 py-4 text-sm font-black tracking-[0.2em] hover:bg-red-600 transition duration-300 text-white uppercase italic">
+                            Zapytaj o współpracę
+                        </a>
                     </div>
                 </div>
             </div>
@@ -124,8 +144,8 @@
 
     <!-- Footer -->
     <footer class="py-12 text-center bg-black border-t border-white/5">
-        <div class="text-xl font-black tracking-tighter uppercase mb-4">RAV<span class="text-red-600">PHOTO</span></div>
-        <p class="text-[10px] text-gray-600 uppercase tracking-[0.2em]">&copy; 2026 Rafał Jakuć. Wszystkie prawa zastrzeżone.</p>
+        <div class="text-xl font-black tracking-tighter uppercase mb-2 text-white">RAV<span class="text-red-600">PHOTO</span></div>
+        <p class="text-[9px] text-gray-700 uppercase tracking-[0.3em] font-bold italic">&copy; 2026 Rafał Jakuć. Powered by Passion.</p>
     </footer>
 
 </body>
