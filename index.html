@@ -26,7 +26,6 @@
 </head>
 <body class="antialiased text-white">
 
-    <!-- Header / Menu -->
     <nav class="fixed w-full z-50 px-6 py-4 md:px-12 md:py-6 flex justify-between items-center nav-blur border-b border-white/5">
         <div class="text-2xl font-black tracking-tighter uppercase">
             RAV<span class="text-red-600">PHOTO</span>
@@ -36,7 +35,7 @@
             <div class="hidden md:flex space-x-8 text-[10px] uppercase tracking-[0.3em] font-bold">
                 <a href="#about" class="hover:text-red-600 transition duration-300">O mnie</a>
                 <a href="#portfolio" class="hover:text-red-600 transition duration-300">Portfolio</a>
-                <a href="#contact" class="hover:text-red-600 transition duration-300">Contact</a>
+                <a href="#contact" class="hover:text-red-600 transition duration-300">Kontakt</a>
             </div>
             
             <div class="flex items-center space-x-4 border-l border-white/20 pl-6">
@@ -50,7 +49,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="relative h-screen flex items-end pb-24 px-6 md:px-12 overflow-hidden">
         <img src="Moto 1.jpg" class="absolute inset-0 w-full h-full object-cover -z-20" alt="Rafał Jakuć - Fotograf Motoryzacyjny">
         <div class="absolute inset-0 hero-gradient -z-10"></div>
@@ -64,7 +62,6 @@
         </div>
     </section>
 
-    <!-- O mnie -->
     <section id="about" class="py-32 px-6 md:px-12 bg-[#0d0d0d]">
         <div class="max-w-4xl mx-auto text-center text-white">
             <h2 class="text-4xl md:text-5xl font-black mb-12 tracking-tighter uppercase italic">O mnie</h2>
@@ -82,7 +79,6 @@
         </div>
     </section>
 
-    <!-- Portfolio Grid -->
     <section id="portfolio" class="py-24 px-4 md:px-8 bg-[#0a0a0a]">
         <div class="mb-16 text-center">
             <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white">
@@ -115,7 +111,6 @@
         </div>
     </section>
 
-    <!-- Kontakt -->
     <section id="contact" class="py-32 px-6 md:px-12 bg-zinc-950 border-t border-white/5 text-center md:text-left text-white">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-5xl font-black mb-12 tracking-tighter uppercase italic text-red-600">Kontakt</h2>
@@ -148,14 +143,11 @@
         </div>
     </section>
 
-    <!-- Lightbox Modal Container -->
     <div id="lightbox" class="fixed inset-0 bg-black/95 z-[100] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 select-none">
-        <!-- Close Button -->
         <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white transition p-2 z-[110]" title="Zamknij (Esc)">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
         
-        <!-- Navigation Arrows -->
         <button id="lightbox-prev" class="absolute left-4 md:left-8 text-white/50 hover:text-white transition p-3 z-[110]" title="Poprzednie (Strzałka w lewo)">
             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
         </button>
@@ -163,21 +155,19 @@
             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         </button>
 
-        <!-- Image Wrapper -->
         <div class="max-w-[90%] max-h-[85vh] flex items-center justify-center">
             <img id="lightbox-img" src="" class="max-w-full max-h-[85vh] object-contain object-center shadow-2xl" alt="Powiększone zdjęcie">
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="py-12 text-center bg-black border-t border-white/5">
         <div class="text-xl font-black tracking-tighter uppercase mb-2 text-white">RAV<span class="text-red-600">PHOTO</span></div>
         <p class="text-[9px] text-gray-700 uppercase tracking-[0.3em] font-bold italic text-white">&copy; 2026 Rafał Jakuć. Powered by Passion.</p>
     </footer>
 
-    <!-- Lightbox JavaScript Logic -->
     <script>
-        const galleryImages = Array.from(document.querySelectorAll('#portfolio grid || #portfolio img')).filter(img => img.tagName === 'IMG');
+        // Łapie tylko zdjęcia znajdujące się wewnątrz sekcji o id "portfolio"
+        const galleryImages = Array.from(document.querySelectorAll('#portfolio img'));
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const btnClose = document.getElementById('lightbox-close');
@@ -189,13 +179,13 @@
             currentIndex = index;
             lightboxImg.src = galleryImages[currentIndex].src;
             lightbox.classList.remove('opacity-0', 'pointer-events-none');
-            document.body.classList.add('overflow-hidden'); // Zablokuj przewijanie tła
+            document.body.classList.add('overflow-hidden');
         }
 
         function closeLightbox() {
             lightbox.classList.add('opacity-0', 'pointer-events-none');
             document.body.classList.remove('overflow-hidden');
-            setTimeout(() => { lightboxImg.src = ''; }, 300); // Czyszczenie src po animacji
+            setTimeout(() => { lightboxImg.src = ''; }, 300);
         }
 
         function showNext() {
@@ -208,7 +198,7 @@
             lightboxImg.src = galleryImages[currentIndex].src;
         }
 
-        // Event Listeners dla zdjęć z galerii
+        // Mapowanie kliknięć na zdjęcia
         galleryImages.forEach((img, index) => {
             img.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -216,13 +206,13 @@
             });
         });
 
-        // Kontrola przycisków interfejsu
+        // Obsługa interfejsu
         btnClose.addEventListener('click', closeLightbox);
         btnNext.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
         btnPrev.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
-        lightbox.addEventListener('click', closeLightbox); // Zamknij po kliknięciu w tło
+        lightbox.addEventListener('click', closeLightbox);
 
-        // Obsługa klawiatury
+        // Klawiatura
         document.addEventListener('keydown', (e) => {
             if (lightbox.classList.contains('opacity-0')) return;
             if (e.key === 'Escape') closeLightbox();
