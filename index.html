@@ -26,6 +26,7 @@
 </head>
 <body class="antialiased text-white">
 
+    <!-- Header / Menu -->
     <nav class="fixed w-full z-50 px-6 py-4 md:px-12 md:py-6 flex justify-between items-center nav-blur border-b border-white/5">
         <div class="text-2xl font-black tracking-tighter uppercase">
             RAV<span class="text-red-600">PHOTO</span>
@@ -49,8 +50,10 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="relative h-screen flex items-end pb-20 md:pb-24 px-6 md:px-12 overflow-hidden">
-        <img src="Moto 1.jpg" class="absolute inset-0 w-full h-full object-cover object-left md:object-center -z-20" alt="Rafał Jakuć - Fotograf Motoryzacyjny">
+        <!-- POPRAWKA: object-[25%] idealnie wyważa auto i dym w pionowym kadrze smartfona -->
+        <img src="Moto 1.jpg" class="absolute inset-0 w-full h-full object-cover object-[25%] md:object-center -z-20" alt="Rafał Jakuć - Fotograf Motoryzacyjny">
         <div class="absolute inset-0 hero-gradient -z-10"></div>
         <div class="max-w-5xl fade-in w-full">
             <h1 class="text-5xl md:text-8xl lg:text-9xl font-black leading-none uppercase italic tracking-tighter text-white break-words">
@@ -62,6 +65,7 @@
         </div>
     </section>
 
+    <!-- O mnie -->
     <section id="about" class="py-32 px-6 md:px-12 bg-[#0d0d0d]">
         <div class="max-w-4xl mx-auto text-center text-white">
             <h2 class="text-4xl md:text-5xl font-black mb-12 tracking-tighter uppercase italic">O mnie</h2>
@@ -73,12 +77,13 @@
                     Odpowiadam za media przy eventach <span class="text-white font-bold uppercase tracking-wider">East Side Drift</span> oraz <span class="text-white font-bold uppercase tracking-wider">Drift Girl Camp</span>. Moja rola to nie tylko zdjęcia – współprowadzę briefingi oraz dbam o bezpieczeństwo i porządek pracy mediów na torze. Dzięki temu doskonale rozumiem dynamikę motorsportu od środka.
                 </p>
                 <p>
-                    Regularnie relacjonuję ligi driftingowe jak <span class="text-white">Drift Open</span> czy <span class="text-white">ESD</span> oraz rajdy i wydarzenia motoryzacyjne w całej Polsce. Od reportaży, przez współpracę z wypożyczalniami aut, po indywidualne sesje – dostarczam materiały, które oddają surowy i autentyczny klimat motoryzacji.
+                    Regularnie relacjonuję ligi driftingowe jak <span class="text-white">Drift Open</span> czy <span class="text-white">DMP</span> oraz rajdy i wydarzenia motoryzacyjne w całej Polsce. Od reportaży, przez współpracę z wypożyczalniami aut, po indywidualne sesje – dostarczam materiały, które oddają surowy i autentyczny klimat motoryzacji.
                 </p>
             </div>
         </div>
     </section>
 
+    <!-- Portfolio Grid -->
     <section id="portfolio" class="py-24 px-4 md:px-8 bg-[#0a0a0a]">
         <div class="mb-16 text-center">
             <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white">
@@ -111,6 +116,7 @@
         </div>
     </section>
 
+    <!-- Instagram Grid Section -->
     <section class="py-24 px-4 md:px-8 bg-[#0d0d0d] border-t border-white/5">
         <div class="mb-12 text-center">
             <p class="text-xs font-bold tracking-[0.3em] text-red-600 uppercase mb-2">Bądź na bieżąco</p>
@@ -159,6 +165,40 @@
         </div>
     </section>
 
+    <!-- Kontakt -->
+    <section id="contact" class="py-32 px-6 md:px-12 bg-zinc-950 border-t border-white/5 text-center md:text-left text-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-5xl font-black mb-12 tracking-tighter uppercase italic text-red-600">Kontakt</h2>
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="space-y-8 text-gray-400 font-light text-center md:text-left">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-2 font-bold">E-mail</p>
+                        <a href="mailto:ravmotophoto@gmail.com" class="text-xl md:text-2xl font-bold text-white hover:text-red-600 transition duration-300">ravmotophoto@gmail.com</a>
+                    </div>
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-2 font-bold">Social Media</p>
+                        <div class="flex justify-center md:justify-start space-x-6 text-xl font-bold text-white">
+                            <a href="https://instagram.com/ravmotophoto" target="_blank" class="hover:text-red-600 transition">Instagram</a>
+                            <a href="https://www.facebook.com/profile.php?id=100075753592007" target="_blank" class="hover:text-red-600 transition">Facebook</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-2 font-bold text-center md:text-left">Lokalizacja</p>
+                        <p class="text-xl md:text-2xl font-bold text-white uppercase italic text-center md:text-left">Białystok / Polska</p>
+                    </div>
+                    <div class="pt-4 flex justify-center md:justify-start">
+                        <a href="mailto:ravmotophoto@gmail.com" class="inline-block border-2 border-red-600 px-12 py-4 text-sm font-black tracking-[0.2em] hover:bg-red-600 transition duration-300 text-white uppercase italic">
+                            Zapytaj o współpracę
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal Container -->
     <div id="lightbox" class="fixed inset-0 bg-black/95 z-[100] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 select-none">
         <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white transition p-2 z-[110]" title="Zamknij (Esc)">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -176,6 +216,13 @@
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="py-12 text-center bg-black border-t border-white/5">
+        <div class="text-xl font-black tracking-tighter uppercase mb-2 text-white">RAV<span class="text-red-600">PHOTO</span></div>
+        <p class="text-[9px] text-gray-700 uppercase tracking-[0.3em] font-bold italic text-white">&copy; 2026 Rafał Jakuć. Powered by Passion.</p>
+    </footer>
+
+    <!-- Lightbox JavaScript Logic -->
     <script>
         const galleryImages = Array.from(document.querySelectorAll('#portfolio img'));
         const lightbox = document.getElementById('lightbox');
